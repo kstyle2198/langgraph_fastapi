@@ -16,20 +16,22 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_groq import ChatGroq
 from langchain_ollama import OllamaEmbeddings
 from typing import List, Any, Union, Dict
+
 from utils.vector_store import get_local_store
 from utils.grader import GraderUtils
 from utils.graph import GraphState
 from utils.generate_chain import create_generate_chain
 from utils.nodes import GraphNodes
 from utils.edges import EdgeGraph
+
 from langgraph.graph import END, StateGraph
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 from langserve import add_routes
 from pydantic import BaseModel, Field
-# from langchain_core.pydantic_v1 import BaseModel, Field
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.output_parsers import StrOutputParser
+
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv()) # important line if cannot load api key
 
@@ -133,7 +135,7 @@ chain = workflow.compile()
 ## Create the FastAPI app
 
 app = FastAPI(
-    title="Test Server",
+    title="LangGraph Test Server",
     version="1.0",
     description="LangGraph FastAPI Streamlit Test"
     

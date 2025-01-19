@@ -1,6 +1,5 @@
 # vector_store.py
 from typing import List, Optional
-# from langchain_openai import OpenAIEmbeddings
 from langchain_ollama import OllamaEmbeddings
 from langchain_chroma import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
